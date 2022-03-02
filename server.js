@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 // set the view engine to ejs
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
 
 app.disable('etag');
 
