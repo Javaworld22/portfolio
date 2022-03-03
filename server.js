@@ -1,9 +1,14 @@
 var express = require('express');
 const bodyParser = require ('body-parser')
 var path = require('path')
+const redirectSSL = require('redirect-ssl')
 var app = express()
 
 const port = process.env.PORT || 3030
+
+app.use(redirectSSL.create({
+  enabled: process.env.NODE_ENV === 'production'
+}))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
